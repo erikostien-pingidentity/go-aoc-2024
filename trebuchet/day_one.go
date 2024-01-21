@@ -1,45 +1,19 @@
 package trebuchet
 
 import (
-	"bufio"
-	"errors"
-	"fmt"
-	"os"
-	"path"
-	"runtime"
 	"strconv"
 	"strings"
+
+	"github.com/erikostien-pingidentity/go-aoc-2024/common"
 )
 
 func SolveDayOne(dataFileName string) (int, int) {
-	// Get the current path of this file during execution
-	_, thisFilePath, _, ok := runtime.Caller(0)
-	if !ok {
-		panic(errors.New("error: no caller information"))
-	}
-
-	thisFileDir := path.Dir(thisFilePath)
-
-	// Get the full pathname for the data
-	dataFilePath := fmt.Sprintf("%s/testdata/%s", thisFileDir, dataFileName)
-
-	// Open the puzzle data that implements the io.Reader interface
-	dataFile, err := os.Open(dataFilePath)
-	if err != nil {
-		panic(err)
-	}
-
-	// Make sure to close the opened file once this scope is closed
-	defer dataFile.Close()
-
-	// Create a new Scanner to enable reading the file line by line
-	scanner := bufio.NewScanner(dataFile)
+	// Get all lines from data file
+	lines := common.GetLinesFromTestdataFile(dataFileName)
 
 	partOneTotal, partTwoTotal := 0, 0
 
-	for scanner.Scan() {
-		dataLine := scanner.Text()
-
+	for _, dataLine := range lines {
 		partOneTotal += getCalibrationValue(dataLine, false)
 
 		partTwoTotal += getCalibrationValue(dataLine, true)
