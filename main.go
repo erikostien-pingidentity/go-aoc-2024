@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	cubecon "github.com/erikostien-pingidentity/go-aoc-2024/cube-conundrum"
+	gearratios "github.com/erikostien-pingidentity/go-aoc-2024/gear-ratios"
 	"github.com/erikostien-pingidentity/go-aoc-2024/trebuchet"
 )
 
@@ -15,6 +16,11 @@ func main() {
 
 	// Solve Day Two
 	answerPartOne, answerPartTwo = cubecon.SolveDayTwo("puzzle_data")
-	fmt.Printf("Answer to Day One Part One: %d\n", answerPartOne)
-	fmt.Printf("Answer to Day One Part Two: %d\n", answerPartTwo)
+	fmt.Printf("Answer to Day Two Part One: %d\n", answerPartOne)
+	fmt.Printf("Answer to Day Two Part Two: %d\n", answerPartTwo)
+
+	// Solve Day Three
+	answerPartOne, answerPartTwo = gearratios.SolveDayThree("puzzle_data")
+	fmt.Printf("Answer to Day Three Part One: %d\n", answerPartOne)
+	fmt.Printf("Answer to Day Three Part Two: %d\n", answerPartTwo)
 }

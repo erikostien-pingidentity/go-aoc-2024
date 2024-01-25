@@ -41,3 +41,19 @@ func GetLinesFromTestdataFile(filename string) []string {
 
 	return lines
 }
+
+// Generic Prepend function to place a value at the 0th index of a slice
+func Prepend[K any](genericSlice []K, prependData K) []K {
+	// Add the prepend data to the end of the slice
+	// This is to extend the slice length by one
+	// The data will be shifted destructively in the next step
+	genericSlice = append(genericSlice, prependData)
+
+	// Shift data destructively to the right
+	copy(genericSlice[1:], genericSlice)
+
+	// Append needed data to front of slice
+	genericSlice[0] = prependData
+
+	return genericSlice
+}
