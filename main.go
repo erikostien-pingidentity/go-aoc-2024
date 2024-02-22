@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	cubecon "github.com/erikostien-pingidentity/go-aoc-2024/cube-conundrum"
+	"github.com/erikostien-pingidentity/go-aoc-2024/fertilizer"
 	gearratios "github.com/erikostien-pingidentity/go-aoc-2024/gear-ratios"
 	"github.com/erikostien-pingidentity/go-aoc-2024/scratchcards"
 	"github.com/erikostien-pingidentity/go-aoc-2024/trebuchet"
@@ -29,4 +30,9 @@ func main() {
 	answerPartOne, answerPartTwo = scratchcards.SolveDayFour("puzzle_data")
 	fmt.Printf("Answer to Day Four Part One: %d\n", answerPartOne)
 	fmt.Printf("Answer to Day Four Part Two: %d\n", answerPartTwo)
+
+	// Solve Day Five
+	answerPartOne, answerPartTwo = fertilizer.SolveDayFive("puzzle_data")
+	fmt.Printf("Answer to Day Five Part One: %d\n", answerPartOne)
+	fmt.Printf("Answer to Day Five Part Two: %d\n", answerPartTwo)
 }
